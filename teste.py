@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import math
-#import so
+import os
 
 def nothing(x):
     pass
@@ -16,11 +16,11 @@ cv2.namedWindow('frame')
 
 # Criação de barras de controle para ajuste fino dos valores de cor da pele
 cv2.createTrackbar('LH', 'frame', 0, 255, nothing)
-cv2.createTrackbar('LS', 'frame', 0, 255, nothing)
+cv2.createTrackbar('LS', 'frame', 17, 255, nothing)
 cv2.createTrackbar('LV', 'frame', 0, 255, nothing)
-cv2.createTrackbar('UH', 'frame', 255, 255, nothing)
-cv2.createTrackbar('US', 'frame', 255, 255, nothing)
-cv2.createTrackbar('UV', 'frame', 255, 255, nothing)
+cv2.createTrackbar('UH', 'frame', 228, 255, nothing)
+cv2.createTrackbar('US', 'frame', 231, 255, nothing)
+cv2.createTrackbar('UV', 'frame', 230, 255, nothing)
 
 try:
     while True:
@@ -105,6 +105,7 @@ try:
                     if arearatio < 12:
                         cv2.putText(frame, '0 = Navegador', (0, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
                         # os.system("xdg-open https://www.google.com")
+                        # exit()
                     elif arearatio < 17.5:
                         cv2.putText(frame, '1 = Gedit', (0, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
                         # os.system("gedit")
